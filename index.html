@@ -9,12 +9,31 @@
 </head>
 <body>
     <div class="stopwatch">
-        <h1>00:00:00</h1>
+        <h1 id="displayTime">00:00:00</h1>
         <div class="buttons">
             <img src="images/stop.png">
             <img src="images/start.png">
             <img src="images/reset.png">
         </div>
     </div>
+
+    <script>
+        let [seconds, minutes, hours] = [0,0,0];
+        let displayTime = document.getElementById("displayTime");
+
+        function stopwatch(){
+            seconds++;
+            if(seconds == 60){
+              seconds = 0;
+              minutes++; 
+              if(minutes == 60){
+                minutes = 0;
+                hours++;
+              } 
+            }
+        }
+    </script>
+
+
 </body>
 </html>
